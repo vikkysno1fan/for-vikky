@@ -3,15 +3,18 @@ body {
     font-family: Arial, sans-serif;
     background: radial-gradient(circle at top, #2d1b4e 0%, #12071f 60%, #0b0413 100%);
     color: #f3e9ff;
+
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
     overflow: hidden;
+    position: relative;
 }
 
-/* soft floating glow effect in background */
+
 body::before {
     content: "";
     position: absolute;
@@ -22,6 +25,7 @@ body::before {
     top: -100px;
     left: -150px;
     border-radius: 50%;
+    z-index: 0;
 }
 
 body::after {
@@ -34,16 +38,22 @@ body::after {
     bottom: -120px;
     right: -120px;
     border-radius: 50%;
+    z-index: 0;
 }
+
 
 .container {
     position: relative;
+    z-index: 1;
+
     max-width: 650px;
     padding: 40px;
+
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(214, 164, 255, 0.25);
     border-radius: 20px;
     backdrop-filter: blur(12px);
+
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
     animation: fadeIn 1.2s ease;
 }
@@ -62,16 +72,21 @@ p {
     line-height: 1.5;
 }
 
+
 button {
     margin-top: 25px;
     padding: 14px 28px;
     font-size: 1rem;
+
     border: none;
     border-radius: 14px;
+
     background: linear-gradient(135deg, #d6a4ff, #a86bff);
     color: #12071f;
+
     cursor: pointer;
     font-weight: bold;
+
     transition: 0.25s ease;
     box-shadow: 0 10px 25px rgba(168, 107, 255, 0.25);
 }
@@ -85,6 +100,7 @@ button:active {
     transform: scale(0.98);
 }
 
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -93,5 +109,34 @@ button:active {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 600px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        display: block;
+        overflow: auto;
+        padding: 20px;
+    }
+
+    .container {
+        margin: 40px auto;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        max-width: 300px;
     }
 }

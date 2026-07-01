@@ -19,8 +19,10 @@ h1 {
 section {
     max-width: 800px;
     margin: auto;
+
     background: rgba(255, 255, 255, 0.04);
     padding: 25px;
+
     border-radius: 16px;
     border: 1px solid rgba(214, 164, 255, 0.2);
 }
@@ -36,4 +38,28 @@ li {
 
 li::marker {
     color: #d6a4ff;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    section {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    li {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+
+    ol {
+        padding-left: 18px;
+    }
 }
