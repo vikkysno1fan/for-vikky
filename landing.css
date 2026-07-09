@@ -55,27 +55,43 @@ p {
 
     margin-top: 40px;
 
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
 }
 
 
-.buttons a {
+.buttons button {
 
-    display: block;
+    background: transparent;
 
-    margin: 20px;
+    border: none;
 
     color: #d6a4ff;
 
-    text-decoration: none;
+    font-family: "Georgia", serif;
 
     font-size: 1.3rem;
+
+    cursor: pointer;
+
+    padding: 5px;
+
+    transition: 0.3s ease;
 
 }
 
 
-.buttons a:hover {
+.buttons button:hover {
 
     color: white;
+
+    transform: translateY(-3px);
 
 }
 
